@@ -23,5 +23,9 @@ router.route("/:id")
     res.send(`Update of id ${req.params.id}`)
 })
 
+router.param("id", (req, res, next, id) => {
+    console.log(`${id} has sent a ${req.method} type `)
+    next()
+})
 
 module.exports = router
